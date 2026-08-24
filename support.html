@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Get help and support for PageBuddy, the PDF reader and annotation app for iPad."
+    >
+
+    <title>PageBuddy — Support</title>
+
+    <style>
+        :root {
+            --navy: #152236;
+            --slate: #53627E;
+            --tan: #C3A280;
+            --beige: #C9B7A6;
+            --cream: #FAF4F0;
+            --white: #FFFFFF;
+            --border: #E3D9D0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--cream);
+            color: var(--navy);
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "SF Pro Text",
+                "SF Pro Display",
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 64px 28px 80px;
+        }
+
+        header {
+            margin-bottom: 48px;
+        }
+
+        .brand {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: var(--slate);
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            color: var(--navy);
+            font-size: 42px;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            max-width: 620px;
+            color: var(--slate);
+            font-size: 19px;
+        }
+
+        h2 {
+            margin: 48px 0 16px;
+            color: var(--navy);
+            font-size: 26px;
+            line-height: 1.3;
+            letter-spacing: -0.015em;
+        }
+
+        p {
+            margin: 0 0 18px;
+        }
+
+        ul {
+            margin: 0 0 22px;
+            padding-left: 26px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--slate);
+            text-decoration: underline;
+            text-decoration-color: var(--beige);
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            color: var(--navy);
+        }
+
+        .support-card {
+            margin: 36px 0 44px;
+            padding: 32px;
+            background: var(--white);
+            border-left: 4px solid var(--tan);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(21, 34, 54, 0.04);
+        }
+
+        .support-card h2 {
+            margin-top: 0;
+        }
+
+        .support-card p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .email-button {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 13px 22px;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 9px;
+            font-weight: 600;
+            text-decoration: none;
+            transition:
+                transform 0.15s ease,
+                opacity 0.15s ease;
+        }
+
+        .email-button:hover {
+            color: var(--white);
+            opacity: 0.92;
+            transform: translateY(-1px);
+        }
+
+        .info-card {
+            margin: 22px 0;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .info-card h3 {
+            margin: 0 0 10px;
+            color: var(--navy);
+            font-size: 19px;
+        }
+
+        .info-card p:last-child,
+        .info-card ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--slate);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                font-size: 16px;
+            }
+
+            .page {
+                padding: 40px 20px 60px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                margin-top: 40px;
+                font-size: 23px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .support-card,
+            .info-card {
+                padding: 20px;
+            }
+
+            .email-button {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <header>
+
+        <a class="brand" href="./">
+            PageBuddy
+        </a>
+
+        <h1>Support</h1>
+
+        <p class="subtitle">
+            Need help with PageBuddy? Have a question, found a bug,
+            or want to share feedback? We'd love to hear from you.
+        </p>
+
+    </header>
+
+
+    <section class="support-card">
+
+        <h2>Contact Support</h2>
+
+        <p>
+            The easiest way to get help is to send us an email.
+        </p>
+
+        <p>
+            We read every message and will do our best to help.
+        </p>
+
+        <a
+            class="email-button"
+            href="mailto:pagebuddy@alexgolovkov.dev?subject=PageBuddy%20Support"
+        >
+            Contact PageBuddy Support
+        </a>
+
+    </section>
+
+
+    <h2>When Reporting a Problem</h2>
+
+    <p>
+        To help us understand and resolve an issue more quickly,
+        please include the following information when possible:
+    </p>
+
+    <div class="info-card">
+
+        <ul>
+            <li>Your iPad model</li>
+            <li>Your iPadOS version</li>
+            <li>Your PageBuddy version</li>
+            <li>A short description of what happened</li>
+            <li>Steps to reproduce the issue, if applicable</li>
+            <li>Screenshots or screen recordings, if helpful</li>
+        </ul>
+
+    </div>
+
+
+    <h2>Feedback and Feature Requests</h2>
+
+    <p>
+        PageBuddy is built for people who read, think, and write.
+        If you have an idea that could make the experience better,
+        we'd love to hear it.
+    </p>
+
+    <p>
+        Whether it's a small improvement, a feature request, or simply
+        something that didn't feel right — send us a message.
+    </p>
+
+
+    <h2>Privacy</h2>
+
+    <p>
+        PageBuddy is designed with privacy in mind. The app does not
+        operate its own servers or use advertising or third-party
+        analytics.
+    </p>
+
+    <p>
+        You can read more about how PageBuddy handles data and iCloud
+        synchronization in our Privacy Policy.
+    </p>
+
+    <p>
+        <a href="./">
+            Read the PageBuddy Privacy Policy
+        </a>
+    </p>
+
+
+    <footer>
+
+        <div>
+            © 2026 PageBuddy. All rights reserved.
+        </div>
+
+        <div class="footer-links">
+            <a href="./">Privacy Policy</a>
+
+            <a
+                href="mailto:pagebuddy@alexgolovkov.dev?subject=PageBuddy%20Support"
+            >
+                Contact Support
+            </a>
+        </div>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
