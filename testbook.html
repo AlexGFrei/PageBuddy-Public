@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PageBuddy — Test Book</title>
+
+<style>
+
+:root {
+    --navy: #152236;
+    --slate: #53627E;
+    --tan: #C3A280;
+    --cream: #FAF4F0;
+    --border: #E3D9D0;
+    --yellow: #F3E7B3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #D9D9D9;
+    color: var(--navy);
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+    line-height: 1.55;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    width: 210mm;
+    height: 297mm;
+
+    margin: 20px auto;
+
+    padding:
+        22mm
+        22mm
+        20mm;
+
+    background: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+    break-after: page;
+    page-break-after: always;
+}
+
+.page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+}
+
+
+/* =========================
+   HEADER / FOOTER
+========================= */
+
+.brand {
+    color: var(--slate);
+
+    font-size: 10pt;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+.page-number {
+    position: absolute;
+
+    bottom: 11mm;
+    left: 22mm;
+    right: 22mm;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--slate);
+
+    font-size: 9.5pt;
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.eyebrow {
+    margin-top: 28mm;
+    margin-bottom: 8mm;
+
+    color: var(--tan);
+
+    font-size: 10pt;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+
+    max-width: 150mm;
+
+    font-size: 40pt;
+    line-height: 1.05;
+
+    letter-spacing: -0.04em;
+}
+
+h1 span {
+    color: var(--slate);
+}
+
+h2 {
+    margin: 0 0 7mm;
+
+    font-size: 27pt;
+    line-height: 1.12;
+
+    letter-spacing: -0.035em;
+}
+
+h3 {
+    margin: 10mm 0 4mm;
+
+    font-size: 17pt;
+    line-height: 1.25;
+}
+
+p {
+    margin: 0 0 5mm;
+
+    font-size: 11.5pt;
+
+    line-height: 1.6;
+}
+
+.lead {
+    max-width: 145mm;
+
+    margin-top: 10mm;
+
+    color: var(--slate);
+
+    font-size: 16pt;
+
+    line-height: 1.5;
+}
+
+.reading-text {
+    max-width: 165mm;
+}
+
+.muted {
+    color: var(--slate);
+}
+
+
+/* =========================
+   COMPONENTS
+========================= */
+
+.hero-box {
+    margin-top: 20mm;
+
+    padding: 11mm;
+
+    background: var(--cream);
+
+    border-left: 3mm solid var(--tan);
+
+    border-radius: 3mm;
+}
+
+.hero-box p {
+    margin-bottom: 4mm;
+
+    font-size: 14pt;
+
+    line-height: 1.55;
+}
+
+.hero-box p:last-child {
+    margin-bottom: 0;
+}
+
+.quote {
+    margin: 9mm 0;
+
+    padding: 7mm 9mm;
+
+    border-left: 2mm solid var(--tan);
+
+    background: var(--cream);
+
+    font-size: 16pt;
+
+    line-height: 1.45;
+
+    letter-spacing: -0.01em;
+}
+
+.highlight {
+    background: var(--yellow);
+
+    padding: 0.5mm 1mm;
+}
+
+.callout {
+    margin: 9mm 0;
+
+    padding: 7mm;
+
+    background: var(--cream);
+
+    border-radius: 3mm;
+}
+
+.callout strong {
+    color: var(--navy);
+}
+
+
+/* =========================
+   TEST BOX
+========================= */
+
+.test-box {
+    margin-top: 7mm;
+
+    padding: 7mm;
+
+    border: 0.6mm solid var(--border);
+
+    border-radius: 4mm;
+
+    background: white;
+}
+
+.test-box h3 {
+    margin: 0 0 4mm;
+
+    color: var(--tan);
+}
+
+.test-box ol,
+.test-box ul {
+    margin: 3mm 0 0;
+
+    padding-left: 7mm;
+
+    font-size: 11.5pt;
+}
+
+.test-box li {
+    margin-bottom: 2.5mm;
+}
+
+
+/* =========================
+   ANNOTATION AREA
+========================= */
+
+.annotation-space {
+    height: 52mm;
+
+    margin-top: 7mm;
+
+    border: 0.6mm dashed var(--border);
+
+    border-radius: 4mm;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 10mm,
+            #EEE8E3 10.2mm,
+            #EEE8E3 10.5mm
+        );
+}
+
+
+/* =========================
+   PRINT
+========================= */
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: 210mm;
+
+        margin: 0;
+        padding: 0;
+
+        background: white;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page {
+        width: 210mm;
+        height: 297mm;
+
+        min-height: 0;
+
+        margin: 0;
+
+        padding:
+            22mm
+            22mm
+            20mm;
+
+        overflow: hidden;
+
+        box-shadow: none;
+
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .page:last-child {
+        break-after: auto;
+        page-break-after: auto;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<section class="page">
+
+    <div class="brand">
+        PAGEBUDDY
+    </div>
+
+    <div class="eyebrow">
+        A PDF Reader for iPad
+    </div>
+
+    <h1>
+        Read.<br>
+        Think.<br>
+        <span>Annotate.</span>
+    </h1>
+
+    <p class="lead">
+        PageBuddy is a fullscreen PDF reader designed around the way
+        people actually read, study, think, and write.
+    </p>
+
+    <div class="hero-box">
+
+        <p>
+            There is no separate edit mode.
+            No annotation mode.
+            No switching back and forth.
+        </p>
+
+        <p>
+            <strong>Use your finger to read.</strong><br>
+            <strong>Use Apple Pencil to write.</strong>
+        </p>
+
+        <p>
+            Pick up the Pencil and start annotating directly on the page.
+        </p>
+
+    </div>
+
+    <div class="page-number">
+        <span>PageBuddy Test Book</span>
+        <span>1</span>
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 2
+===================================================== -->
+
+<section class="page">
+
+    <div class="brand">
+        PAGEBUDDY · HOW IT WORKS
+    </div>
+
+    <div style="margin-top: 18mm;">
+
+        <h2>
+            Reading and writing belong together.
+        </h2>
+
+        <p class="reading-text">
+            Traditional PDF applications often separate reading from editing.
+            Before writing something down, the reader may need to find a
+            markup tool, switch modes, select a pen, and then switch back
+            to reading.
+        </p>
+
+        <p class="reading-text">
+            PageBuddy removes that interruption. The document remains the
+            center of the experience while Apple Pencil is available for
+            writing directly on the page.
+        </p>
+
+        <div class="quote">
+            “The best annotation interface is the one you do not have
+            to think about.”
+        </div>
+
+        <p class="reading-text">
+            A reader should be able to underline an important sentence at
+            the moment it becomes important, circle an unfamiliar concept,
+            or write a short thought before it disappears.
+        </p>
+
+        <p class="reading-text">
+            <span class="highlight">
+                The goal is not to turn reading into editing.
+            </span>
+            The goal is to allow thinking to happen without interrupting
+            reading.
+        </p>
+
+    </div>
+
+    <div class="test-box">
+
+        <h3>Try annotating this page</h3>
+
+        <ol>
+            <li>Underline the sentence you find most important.</li>
+            <li>Circle the phrase that best describes PageBuddy.</li>
+            <li>Write a short note in the margin.</li>
+            <li>Draw an arrow connecting two related ideas.</li>
+        </ol>
+
+    </div>
+
+    <div class="page-number">
+        <span>PageBuddy Test Book</span>
+        <span>2</span>
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 3
+===================================================== -->
+
+<section class="page">
+
+    <div class="brand">
+        PAGEBUDDY · YOUR FILES
+    </div>
+
+    <div style="margin-top: 18mm;">
+
+        <h2>
+            Your PDFs stay where they are.
+        </h2>
+
+        <p class="reading-text">
+            PageBuddy works with PDF files stored in folders selected by
+            the user. It does not require importing an entire library into
+            a separate application vault.
+        </p>
+
+        <p class="reading-text">
+            The original PDF remains unchanged while you read and annotate.
+            PageBuddy stores annotation information separately from the
+            original document.
+        </p>
+
+        <div class="callout">
+
+            <strong>Original PDF</strong><br>
+            remains unchanged.
+
+            <br><br>
+
+            <strong>Annotations</strong><br>
+            are stored separately and associated with the document.
+
+            <br><br>
+
+            <strong>Export</strong><br>
+            creates an annotated PDF when you want to share or save your
+            annotations outside the app.
+
+        </div>
+
+        <p class="reading-text">
+            This approach makes it possible to preserve the original
+            document while still allowing the reader to make the book
+            their own.
+        </p>
+
+    </div>
+
+    <div class="test-box">
+
+        <h3>Annotation exercise</h3>
+
+        <p>
+            Imagine you are studying this document for an exam.
+        </p>
+
+        <ul>
+            <li>Underline the most important concept.</li>
+            <li>Draw a box around the feature you would use most.</li>
+            <li>Add a short handwritten summary next to the callout.</li>
+        </ul>
+
+    </div>
+
+    <div class="page-number">
+        <span>PageBuddy Test Book</span>
+        <span>3</span>
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 4
+===================================================== -->
+
+<section class="page">
+
+    <div class="brand">
+        PAGEBUDDY · REMEMBERED
+    </div>
+
+    <div style="margin-top: 18mm;">
+
+        <h2>
+            Pick up where you left off.
+        </h2>
+
+        <p class="reading-text">
+            Reading is rarely completed in a single session. A book may be
+            opened for a few minutes in the morning, revisited later in the
+            day, and returned to weeks afterward.
+        </p>
+
+        <p class="reading-text">
+            PageBuddy remembers information associated with the documents
+            you read, including reading progress and annotations.
+        </p>
+
+        <p class="reading-text">
+            When the same document appears again in one of the folders
+            tracked by the app, PageBuddy can recognize it and restore
+            information associated with that document.
+        </p>
+
+        <div class="quote">
+            “A good reading tool remembers the book, not just the file.”
+        </div>
+
+        <p class="reading-text">
+            Reading progress and annotation data can also synchronize
+            between compatible devices through Apple's iCloud services
+            when available and enabled.
+        </p>
+
+    </div>
+
+    <div class="test-box">
+
+        <h3>Test persistence</h3>
+
+        <ol>
+            <li>Add a few annotations to this page.</li>
+            <li>Close the document.</li>
+            <li>Open it again in PageBuddy.</li>
+            <li>Verify that annotations remain available.</li>
+        </ol>
+
+    </div>
+
+    <div class="page-number">
+        <span>PageBuddy Test Book</span>
+        <span>4</span>
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 5
+===================================================== -->
+
+<section class="page">
+
+    <div class="brand">
+        PAGEBUDDY · ANNOTATION PLAYGROUND
+    </div>
+
+    <div style="margin-top: 18mm;">
+
+        <h2>
+            Make this page yours.
+        </h2>
+
+        <p class="reading-text">
+            This page intentionally leaves space for testing handwriting,
+            drawing, underlining, circling, arrows, and free-form notes.
+        </p>
+
+        <div class="test-box">
+
+            <h3>Apple Pencil test</h3>
+
+            <p>
+                Try all of the following:
+            </p>
+
+            <ul>
+                <li>Write your name below.</li>
+                <li>Draw a small diagram.</li>
+                <li>Underline this sentence.</li>
+                <li>Circle the word <strong>PageBuddy</strong>.</li>
+                <li>Draw an arrow somewhere on the page.</li>
+                <li>Write a short note about your reading experience.</li>
+            </ul>
+
+        </div>
+
+        <div class="annotation-space"></div>
+
+    </div>
+
+    <div class="page-number">
+        <span>PageBuddy Test Book</span>
+        <span>5</span>
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 6
+===================================================== -->
+
+<section class="page">
+
+    <div class="brand">
+        PAGEBUDDY · TEST COMPLETE
+    </div>
+
+    <div style="margin-top: 32mm;">
+
+        <h2>
+            That's PageBuddy.
+        </h2>
+
+        <p class="lead" style="font-size: 17pt;">
+            Open a PDF. Read it. Pick up your Apple Pencil when you have
+            something to say.
+        </p>
+
+        <div class="hero-box" style="margin-top: 18mm;">
+
+            <p>
+                <strong>No edit mode.</strong>
+            </p>
+
+            <p>
+                <strong>No annotation mode.</strong>
+            </p>
+
+            <p>
+                <strong>No need to stop reading.</strong>
+            </p>
+
+            <p style="margin-top: 7mm;">
+                Just read. Think. Annotate.
+            </p>
+
+        </div>
+
+        <div class="callout" style="margin-top: 15mm;">
+
+            <strong>For App Review</strong>
+
+            <p style="margin-top: 4mm;">
+                This PDF is provided as sample content for testing the core
+                functionality of PageBuddy, including PDF reading,
+                fullscreen navigation, Apple Pencil annotation, annotation
+                persistence, and reopening a previously annotated document.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="page-number">
+        <span>PageBuddy Test Book</span>
+        <span>6</span>
+    </div>
+
+</section>
+
+
+</body>
+</html>
